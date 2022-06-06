@@ -53,6 +53,7 @@ a {
 .footer {
     text-align: center;
     background-color: #356d6d;
+    padding-bottom: 10px;
 }
 .footer-image {
     height: 80px;
