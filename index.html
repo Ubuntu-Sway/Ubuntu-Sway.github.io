@@ -20,7 +20,7 @@
             <h1>Ubuntu Sway Remix</h1>
             <p>Ubuntu with <a href="https://swaywm.org/">Sway</a> Wayland compositor</p>
             <br><br>
-            <a href="https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/releases/download/22.04_beta-202205280223/ubuntusway-22.04-amd64-202205280223-desktop.iso" class="download-button">Download Beta Now</a>
+            <a href="#" class="download-button" id="download-link">Download Beta Now</a>
             <a href="https://matrix.to/#/#ubuntusway:matrix.org" class="download-button">Matrix Chat</a>
         </div>
         <div class="content">
@@ -70,8 +70,20 @@
             </ul>
         </div>
         <div class="footer">
-            <img src="images/welcome.png" class="footer-image">
+            <img src="images/welcome.png" class="footer-image"><br>
+            <small>Ubuntu is a Trademark of Canonical Ltd.</small>
         </div>
     </div>
+    <script>
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
+        }
+        var url = JSON.parse(httpGet("https://api.github.com/repos/Ubuntu-Sway/Ubuntu-Sway-Remix/releases"))[0].assets[0].browser_download_url;
+        document.getElementById("download-link").href = url;
+    </script>
 </body>
 </html>
