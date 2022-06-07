@@ -26,6 +26,7 @@ a {
 .header-logo {
     height: 100px;
     transition: 1s;
+    border-radius: 50%;
 }
 .header-logo:hover {
     transform: rotate(360deg);
